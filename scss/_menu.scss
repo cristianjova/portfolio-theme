@@ -9,11 +9,15 @@
 
   .btn-line {
     width: 28px;
-    height: 4px;
-    border-radius: 5px;
+    height: 3px;
     margin: 0 0 5px 0;
     background: set-text-color($primary-color);
     @include easeOut;
+
+    &:nth-child(2) {
+      width: 24px;
+      margin-left: 4px;
+    }
   }
 
   // Rotate Into x With Menu Lines
@@ -23,7 +27,7 @@
     .btn-line {
       // Line 1 - Rotate
       &:nth-child(1) {
-        transform: rotate(45deg) translate((6px, 6px));
+        transform: rotate(45deg) translate((10px, 10px));
         background: $secondary-color;
       }
 
@@ -34,7 +38,7 @@
 
       // Line 3 - Rotate
       &:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(1px, -1px);
         background: $secondary-color;
       }
     }
@@ -112,6 +116,7 @@
 
     &.current > a {
       color: $secondary-color;
+      font-weight: 700;
     }
 
     a {

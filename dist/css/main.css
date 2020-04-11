@@ -7,20 +7,22 @@
   transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
-    height: 4px;
-    border-radius: 5px;
+    height: 3px;
     margin: 0 0 5px 0;
     background: #fff;
     transition: all 0.5s ease-out; }
+    .menu-btn .btn-line:nth-child(2) {
+      width: 24px;
+      margin-left: 4px; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
+      transform: rotate(45deg) translate(10px, 10px);
       background: #eece1a; }
     .menu-btn.close .btn-line:nth-child(2) {
       opacity: 0; }
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
+      transform: rotate(-45deg) translate(1px, -1px);
       background: #eece1a; }
 
 .menu {
@@ -68,7 +70,8 @@
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #eece1a; }
+      color: #eece1a;
+      font-weight: 700; }
     .menu .nav-item a {
       overflow: hidden;
       padding: 0 6px; }
@@ -216,7 +219,7 @@ main {
     border: #eece1a 3px solid; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
+    font-size: 1.2rem; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
