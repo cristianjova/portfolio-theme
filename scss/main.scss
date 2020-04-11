@@ -23,13 +23,13 @@ h3 {
   font-weight: 400;
 
   &.lg-heading {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 0.2rem 0.5rem;
   }
 }
 
@@ -53,14 +53,44 @@ main {
   height: 100%;
 
   .icons {
+    display: flex;
+    justify-content: flex-start;
     margin-top: 1rem;
 
     a {
       padding: 0.4rem;
 
-      &:hover {
-        color: $secondary-color;
-        @include easeOut();
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      margin: 10px;
+      width: 45px;
+      height: 45px;
+      background: $secondary-color;
+      border: 3px solid $secondary-color;
+      border-radius: 5%;
+      position: relative;
+      color: set-text-color($primary-color);
+      z-index: 1;
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba($primary-color, 0.9);
+        color: set-text-color($primary-color);
+        border-radius: 5%;
+        transform: scale(0);
+        transition: 0.5s ease-in-out;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        transform: scale(1);
       }
     }
   }
