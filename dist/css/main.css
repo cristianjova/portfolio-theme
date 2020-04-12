@@ -197,11 +197,11 @@ main {
         background: rgba(68, 68, 68, 0.9);
         color: #fff;
         border-radius: 5%;
-        transform: scale(0);
+        transform: scale(1);
         transition: 0.5s ease-in-out;
         z-index: -1; }
       main .icons a:hover::before {
-        transform: scale(1); }
+        transform: scale(0); }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -210,7 +210,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio ' 'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio ' 'title title title' 'skills skills skills';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -220,16 +220,51 @@ main {
   .about-info .bio {
     grid-area: bio;
     font-size: 1.2rem; }
-  .about-info .job-1 {
-    grid-area: job1; }
-  .about-info .job-2 {
-    grid-area: job2; }
-  .about-info .job-3 {
-    grid-area: job3; }
-  .about-info .job {
-    background: #515151;
-    padding: 0.5rem;
-    border-bottom: #eece1a 5px solid; }
+  .about-info .skill-title {
+    grid-area: title;
+    margin-bottom: 0; }
+  .about-info .skills {
+    grid-area: skills;
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: minmax(50px, auto);
+    grid-auto-flow: dense;
+    grid-gap: 10px; }
+    .about-info .skills .skill {
+      background: #2b2b2b;
+      padding: 20px;
+      display: grid;
+      font-size: 20px;
+      place-items: center;
+      border-bottom: 3px solid #eece1a;
+      transition: all 0.5s ease-in-out; }
+      .about-info .skills .skill svg path {
+        fill: #eece1a; }
+      .about-info .skills .skill:hover {
+        background: #eece1a; }
+        .about-info .skills .skill:hover svg path {
+          fill: #000; }
+      .about-info .skills .skill svg {
+        position: relative;
+        max-width: 100px;
+        margin-bottom: 10px; }
+      .about-info .skills .skill:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 1; }
+      .about-info .skills .skill:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 1; }
+      .about-info .skills .skill:nth-child(6) {
+        grid-column: span 1;
+        grid-row: span 2; }
+      .about-info .skills .skill:nth-child(7) {
+        grid-column: span 2;
+        grid-row: span 1; }
+      .about-info .skills .skill:nth-child(10) {
+        grid-column: span 3;
+        grid-row: span 1; }
 
 #main-footer {
   text-align: center;
@@ -237,6 +272,10 @@ main {
   background: #2b2b2b;
   color: #fff;
   height: 60px; }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .skills .skill:nth-child(9) {
+    grid-row: span 2; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -271,8 +310,13 @@ main {
       width: 150px;
       height: 150px; }
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; } }
+    grid-template-areas: 'bioimage' 'bio' 'title' 'skills';
+    grid-template-columns: 1fr; }
+    .about-info .skills {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-rows: minmax(50px, auto); }
+      .about-info .skills .skill:nth-child(10) {
+        grid-column: span 3; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -290,4 +334,10 @@ main {
   h3.sm-heading {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    padding: 0.2rem 0.5rem; } }
+    padding: 0.2rem 0.5rem; }
+  .skills {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    grid-template-rows: minmax(auto, auto); }
+    .skills .skill {
+      grid-column: unset !important;
+      grid-row: unset !important; } }

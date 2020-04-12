@@ -84,13 +84,13 @@ main {
         background: rgba($primary-color, 0.9);
         color: set-text-color($primary-color);
         border-radius: 5%;
-        transform: scale(0);
+        transform: scale(1);
         transition: 0.5s ease-in-out;
         z-index: -1;
       }
 
       &:hover::before {
-        transform: scale(1);
+        transform: scale(0);
       }
     }
   }
@@ -109,7 +109,9 @@ main {
   grid-gap: 30px;
   grid-template-areas:
     'bioimage bio bio '
-    'job1 job2 job3';
+    'title title title'
+    'skills skills skills';
+
   grid-template-columns: repeat(3, 1fr);
 
   .bio-image {
@@ -124,16 +126,73 @@ main {
     font-size: 1.2rem;
   }
 
-  @for $x from 1 through 3 {
-    .job-#{$x} {
-      grid-area: job + $x;
-    }
+  .skill-title {
+    grid-area: title;
+    margin-bottom: 0;
   }
 
-  .job {
-    background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+  .skills {
+    grid-area: skills;
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: minmax(50px, auto);
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+
+    .skill {
+      background: darken($primary-color, 10);
+      padding: 20px;
+      display: grid;
+      font-size: 20px;
+      place-items: center;
+      border-bottom: 3px solid $secondary-color;
+      transition: all 0.5s ease-in-out;
+
+      svg path {
+        fill: $secondary-color;
+      }
+
+      &:hover {
+        background: $secondary-color;
+
+        svg path {
+          fill: set-text-color($secondary-color);
+        }
+      }
+
+      svg {
+        position: relative;
+        max-width: 100px;
+        margin-bottom: 10px;
+      }
+
+      &:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      &:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      &:nth-child(6) {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+
+      &:nth-child(7) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      &:nth-child(10) {
+        grid-column: span 3;
+        grid-row: span 1;
+      }
+    }
   }
 }
 
