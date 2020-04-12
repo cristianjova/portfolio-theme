@@ -241,7 +241,7 @@ main {
       border-bottom: 3px solid #eece1a;
       transition: all 0.5s ease-in-out; }
       .about-info .skills .skill svg path {
-        fill: #eece1a; }
+        fill: #fff; }
       .about-info .skills .skill:hover {
         background: #eece1a; }
         .about-info .skills .skill:hover svg path {
