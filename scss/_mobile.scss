@@ -109,7 +109,7 @@
 // Smartphones
 @include mediaSm {
   main {
-    padding: 4rem 2.5rem;
+    padding: 4rem 1.8rem;
 
     .icons {
       a {
@@ -127,11 +127,11 @@
   h2,
   h3 {
     &.lg-heading {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
     }
 
     &.sm-heading {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-bottom: 1.5rem;
       padding: 0.2rem 0.5rem;
     }

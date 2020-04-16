@@ -74,6 +74,7 @@
     padding: 0;
     background: darken($primary-color, 5);
     list-style: none;
+    font-family: 'Roboto', sans-serif;
     transform: translate3d(0, -100%, 0);
     @include easeOut;
 
@@ -121,7 +122,7 @@
 
     a {
       overflow: hidden;
-      padding: 0 6px;
+      padding: 0 15px;
 
       span {
         position: relative;
@@ -132,7 +133,7 @@
           position: absolute;
           top: 100%;
           content: attr(data-hover);
-          font-weight: 600;
+          font-weight: 700;
           transform: translate3d(0, 0, 0);
           width: 100vw;
         }
@@ -150,7 +151,7 @@
     position: relative;
     font-size: 1.8rem;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 400;
     color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
