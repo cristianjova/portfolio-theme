@@ -50,7 +50,8 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  // height: 100%;
+  min-height: calc(100vh - 60px);
 
   .icons {
     display: flex;
@@ -68,7 +69,6 @@ main {
       width: 45px;
       height: 45px;
       background: $secondary-color;
-      border: 3px solid $secondary-color;
       border-radius: 5%;
       position: relative;
       color: set-text-color($primary-color);
@@ -81,10 +81,10 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        background: rgba($primary-color, 0.9);
+        background: $primary-color;
         color: set-text-color($primary-color);
         border-radius: 5%;
-        transform: scale(1);
+        transform: scale(1.02);
         transition: 0.5s ease-in-out;
         z-index: -1;
       }
@@ -194,6 +194,212 @@ main {
       }
     }
   }
+}
+// End About Page
+
+//  Work/Projects Page
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem;
+
+  .item {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    @include easeOut;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      // border: 3px solid $secondary-color;
+      transform: translateY(10px);
+
+      &:before {
+        opacity: 1;
+      }
+
+      .item-text {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      img {
+        filter: blur(2px);
+        transform: scale(1.2);
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, #000, transparent);
+      z-index: 1;
+      transition: 0.5s;
+      opacity: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: scale(1);
+      @include easeOut;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+
+    .item-text {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 0.5s;
+      padding: 0.2rem 1rem;
+
+      h2 {
+        font-weight: 600;
+        font-size: 1.6rem;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          background: $secondary-color;
+          color: set-text-color($secondary-color);
+          padding: 0.2rem;
+          font-size: 0.7rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          line-height: 1;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: baseline;
+          border-radius: 0.25rem;
+          margin-right: 0.2rem;
+          margin-bottom: 0.2rem;
+          @include easeOut;
+
+          &:hover {
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+          }
+        }
+      }
+
+      .project-icons {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0.8rem 0;
+
+        // a:hover {
+        //   cursor: pointer;
+        //   background: $secondary-color;
+        //   color: set-text-color($secondary-color);
+        // }
+        // a {
+        //   background: lighten($primary-color, 15);
+        //   width: 5rem;
+        //   outline: none;
+        //   position: relative;
+        //   color: set-text-color($primary-color);
+        //   padding: 5px 20px;
+        //   border-radius: 5px;
+        //   overflow: hidden;
+        //   margin-right: 0.5rem;
+        // }
+
+        // /*a:before (attr data-hover)*/
+        // a:hover:before {
+        //   opacity: 1;
+        //   transform: translate(0, 0);
+        // }
+        // a:before {
+        //   content: attr(data-hover);
+        //   position: absolute;
+        //   left: 0;
+        //   width: 100%;
+        //   text-transform: uppercase;
+        //   font-weight: 800;
+        //   font-size: 0.8rem;
+        //   text-align: center;
+        //   opacity: 0;
+        //   transform: translate(0, -100%);
+        //   @include easeOut;
+        // }
+        // /*a div (a text before hover)*/
+        // a:hover div {
+        //   opacity: 0;
+        //   transform: translate(0, 100%);
+        // }
+        // a div {
+        //   text-transform: uppercase;
+        //   font-weight: 800;
+        //   font-size: 0.8rem;
+        //   text-align: center;
+        //   @include easeOut;
+        // }
+
+        a {
+          background: $primary-color;
+          color: set-text-color($primary-color);
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          padding: 0.5rem;
+          margin-right: 0.5rem;
+          border-radius: 50%;
+          @include easeOut;
+
+          &:hover {
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+          }
+        }
+      }
+    }
+  }
+}
+// End Work/Projects Page
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+    @include easeOut;
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
 }
 
 #main-footer {

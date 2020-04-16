@@ -1,9 +1,15 @@
 // Widescreen
 @include mediaXl {
+  // Work/Projects Page
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  // End Worl/Projects Page
 }
 
 // Desktops & Laptos
 @include mediaLg {
+  // About Page
   .skills {
     .skill {
       &:nth-child(9) {
@@ -11,6 +17,13 @@
       }
     }
   }
+  // End About Page
+
+  // Work/Projects Page
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  // End Worl/Projects Page
 }
 
 // Tablets & Small Laptops
@@ -84,6 +97,13 @@
       }
     }
   }
+  // End About Page
+
+  // Work/Projects Page
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  // End Worl/Projects Page
 }
 
 // Smartphones
@@ -127,4 +147,11 @@
       grid-row: unset !important;
     }
   }
+  // End About Page
+
+  // Work/Projects Page
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  // End Worl/Projects Page
 }

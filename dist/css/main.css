@@ -167,7 +167,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .icons {
     display: flex;
     justify-content: flex-start;
@@ -182,7 +182,6 @@ main {
       width: 45px;
       height: 45px;
       background: #eece1a;
-      border: 3px solid #eece1a;
       border-radius: 5%;
       position: relative;
       color: #fff;
@@ -194,10 +193,10 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        background: rgba(68, 68, 68, 0.9);
+        background: #444;
         color: #fff;
         border-radius: 5%;
-        transform: scale(1);
+        transform: scale(1.02);
         transition: 0.5s ease-in-out;
         z-index: -1; }
       main .icons a:hover::before {
@@ -266,6 +265,122 @@ main {
         grid-column: span 3;
         grid-row: span 1; }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem; }
+  .projects .item {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); }
+    .projects .item:hover {
+      transform: translateY(10px); }
+      .projects .item:hover:before {
+        opacity: 1; }
+      .projects .item:hover .item-text {
+        opacity: 1;
+        transform: translateY(0); }
+      .projects .item:hover img {
+        filter: blur(2px);
+        transform: scale(1.2); }
+    .projects .item:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, #000, transparent);
+      z-index: 1;
+      transition: 0.5s;
+      opacity: 0; }
+    .projects .item img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: scale(1);
+      transition: all 0.5s ease-out;
+      top: 0;
+      left: 0;
+      object-fit: cover; }
+    .projects .item .item-text {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 0.5s;
+      padding: 0.2rem 1rem; }
+      .projects .item .item-text h2 {
+        font-weight: 600;
+        font-size: 1.6rem; }
+      .projects .item .item-text ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap; }
+        .projects .item .item-text ul li {
+          background: #eece1a;
+          color: #000;
+          padding: 0.2rem;
+          font-size: 0.7rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          line-height: 1;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: baseline;
+          border-radius: 0.25rem;
+          margin-right: 0.2rem;
+          margin-bottom: 0.2rem;
+          transition: all 0.5s ease-out; }
+          .projects .item .item-text ul li:hover {
+            background: #eece1a;
+            color: #000; }
+      .projects .item .item-text .project-icons {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0.8rem 0; }
+        .projects .item .item-text .project-icons a {
+          background: #444;
+          color: #fff;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          padding: 0.5rem;
+          margin-right: 0.5rem;
+          border-radius: 50%;
+          transition: all 0.5s ease-out; }
+          .projects .item .item-text .project-icons a:hover {
+            background: #eece1a;
+            color: #000; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #000;
+    transition: all 0.5s ease-out; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -273,9 +388,15 @@ main {
   color: #fff;
   height: 60px; }
 
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .skills .skill:nth-child(9) {
-    grid-row: span 2; } }
+    grid-row: span 2; }
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -316,7 +437,9 @@ main {
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       grid-template-rows: minmax(50px, auto); }
       .about-info .skills .skill:nth-child(10) {
-        grid-column: span 3; } }
+        grid-column: span 3; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -340,4 +463,6 @@ main {
     grid-template-rows: minmax(auto, auto); }
     .skills .skill {
       grid-column: unset !important;
-      grid-row: unset !important; } }
+      grid-row: unset !important; }
+  .projects {
+    grid-template-columns: 1fr; } }
