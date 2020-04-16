@@ -152,6 +152,32 @@
   // Work/Projects Page
   .projects {
     grid-template-columns: 1fr;
+
+    .item {
+      &:hover {
+        transform: translateY(0);
+      }
+
+      .item-text {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      &:before {
+        opacity: 1;
+      }
+
+      .item-text {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      img {
+        filter: blur(2px);
+        transform: scale(1.2);
+      }
+    }
   }
   // End Worl/Projects Page
 }
