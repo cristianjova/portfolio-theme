@@ -11,7 +11,7 @@ body {
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
-  font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Karla', sans-serif;
   line-height: 1.5;
 }
 
@@ -19,12 +19,11 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Roboto', sans-serif;
   margin: 0;
-  font-weight: 400;
+  font-weight: 700;
 
   &.lg-heading {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   &.sm-heading {
@@ -126,7 +125,9 @@ main {
     grid-area: bio;
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
+      color: $alt-color;
+      line-height: 1.7rem;
     }
   }
 
@@ -311,54 +312,6 @@ main {
         justify-content: flex-start;
         margin: 0.8rem 0;
 
-        // a:hover {
-        //   cursor: pointer;
-        //   background: $secondary-color;
-        //   color: set-text-color($secondary-color);
-        // }
-        // a {
-        //   background: lighten($primary-color, 15);
-        //   width: 5rem;
-        //   outline: none;
-        //   position: relative;
-        //   color: set-text-color($primary-color);
-        //   padding: 5px 20px;
-        //   border-radius: 5px;
-        //   overflow: hidden;
-        //   margin-right: 0.5rem;
-        // }
-
-        // /*a:before (attr data-hover)*/
-        // a:hover:before {
-        //   opacity: 1;
-        //   transform: translate(0, 0);
-        // }
-        // a:before {
-        //   content: attr(data-hover);
-        //   position: absolute;
-        //   left: 0;
-        //   width: 100%;
-        //   text-transform: uppercase;
-        //   font-weight: 800;
-        //   font-size: 0.8rem;
-        //   text-align: center;
-        //   opacity: 0;
-        //   transform: translate(0, -100%);
-        //   @include easeOut;
-        // }
-        // /*a div (a text before hover)*/
-        // a:hover div {
-        //   opacity: 0;
-        //   transform: translate(0, 100%);
-        // }
-        // a div {
-        //   text-transform: uppercase;
-        //   font-weight: 800;
-        //   font-size: 0.8rem;
-        //   text-align: center;
-        //   @include easeOut;
-        // }
-
         a {
           background: $primary-color;
           color: set-text-color($primary-color);
@@ -380,6 +333,10 @@ main {
   }
 }
 // End Work/Projects Page
+
+// Contact Page
+
+// End Contact Page
 
 // Button Styles
 .btn {

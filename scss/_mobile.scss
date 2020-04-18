@@ -103,7 +103,12 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
-  // End Worl/Projects Page
+  // End Work/Projects Page
+
+  // Contact Page
+  .contact-info {
+    display: block;
+  }
 }
 
 // Smartphones
@@ -127,11 +132,11 @@
   h2,
   h3 {
     &.lg-heading {
-      font-size: 3.8rem;
+      font-size: 3rem;
     }
 
     &.sm-heading {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       padding: 0.2rem 0.5rem;
     }
@@ -179,5 +184,5 @@
       }
     }
   }
-  // End Worl/Projects Page
+  // End Work/Projects Page
 }
