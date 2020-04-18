@@ -4,7 +4,7 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
-  // End Worl/Projects Page
+  // End Work/Projects Page
 }
 
 // Desktops & Laptos
@@ -23,7 +23,7 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
-  // End Worl/Projects Page
+  // End Work/Projects Page
 }
 
 // Tablets & Small Laptops
@@ -40,11 +40,6 @@
       a {
         margin: 9px;
       }
-    }
-
-    .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem;
     }
   }
 
@@ -121,6 +116,13 @@
         margin: 7px;
       }
     }
+
+    div#title {
+      .lg-heading {
+        font-size: 2.4rem;
+        margin-bottom: 0.4rem;
+      }
+    }
   }
 
   main#home h1 {
@@ -136,9 +138,9 @@
     }
 
     &.sm-heading {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-bottom: 1.5rem;
-      padding: 0.2rem 0.5rem;
+      margin-top: 0.4rem;
     }
   }
 

@@ -27,9 +27,8 @@ h3 {
   }
 
   &.sm-heading {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
-    padding: 0.2rem 0.5rem;
   }
 }
 
@@ -71,8 +70,12 @@ main {
       background: $secondary-color;
       border-radius: 5%;
       position: relative;
-      color: set-text-color($primary-color);
+      color: set-text-color($secondary-color);
       z-index: 1;
+
+      &:hover {
+        color: #fff;
+      }
 
       &::before {
         content: '';
@@ -92,6 +95,29 @@ main {
       &:hover::before {
         transform: scale(0);
       }
+    }
+  }
+
+  div#title {
+    position: relative;
+    width: inherit;
+    line-height: 1;
+    text-align: initial;
+
+    .first-l {
+      position: absolute;
+      top: 34px;
+      left: -16px;
+      background: #dddddd;
+      height: 8px;
+      width: 80px;
+      z-index: -1;
+    }
+
+    .lg-heading {
+      font-size: 2.8rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: -1.4px;
     }
   }
 
@@ -163,7 +189,7 @@ main {
         background: $secondary-color;
 
         svg path {
-          fill: set-text-color($secondary-color);
+          fill: #fff;
         }
       }
 
@@ -286,7 +312,7 @@ main {
 
         li {
           background: $secondary-color;
-          color: set-text-color($secondary-color);
+          color: $primary-color;
           padding: 0.2rem;
           font-size: 0.7rem;
           font-weight: 700;
@@ -325,7 +351,7 @@ main {
 
           &:hover {
             background: $secondary-color;
-            color: set-text-color($secondary-color);
+            color: $primary-color;
           }
         }
       }
