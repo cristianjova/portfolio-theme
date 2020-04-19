@@ -6,6 +6,8 @@
   top: 35px;
   cursor: pointer;
   transition: all 0.5s ease-out; }
+  .menu-btn:hover .btn-line {
+    background: #ff0400; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
@@ -234,8 +236,7 @@ main {
   .about-info .bio-image {
     grid-area: bioimage;
     margin: auto;
-    border-radius: 50%;
-    border: #ff0400 3px solid; }
+    position: relative; }
   .about-info .bio {
     grid-area: bio; }
     .about-info .bio p {

@@ -144,8 +144,9 @@ main {
   .bio-image {
     grid-area: bioimage;
     margin: auto;
-    border-radius: 50%;
-    border: $secondary-color 3px solid;
+    position: relative;
+    // border-radius: 50%;
+    // border: $secondary-color 3px solid;
   }
 
   .bio {
