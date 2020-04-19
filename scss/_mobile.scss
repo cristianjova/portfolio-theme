@@ -101,8 +101,20 @@
   // End Work/Projects Page
 
   // Contact Page
-  .contact-info {
+  .contact {
     display: block;
+
+    &-info {
+      padding-right: 0;
+
+      .info {
+        margin-bottom: 1rem;
+      }
+
+      .social {
+        margin-top: 2rem;
+      }
+    }
   }
 }
 
@@ -187,4 +199,13 @@
     }
   }
   // End Work/Projects Page
+
+  // Contact page
+  .contact {
+    &-info {
+      .social {
+        justify-content: space-between;
+      }
+    }
+  }
 }
