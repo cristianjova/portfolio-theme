@@ -391,6 +391,23 @@ main {
             background: #ff0400;
             color: #fff; }
 
+main#contact div#title h2 .txt-type .txt {
+  position: relative; }
+  main#contact div#title h2 .txt-type .txt::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 85%;
+    top: 0.13rem;
+    border-right: 2px solid #333;
+    animation: typingEffect 0.5s infinite ease; }
+
+@keyframes typingEffect {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .contact {
   display: flex;
   justify-content: space-between; }
